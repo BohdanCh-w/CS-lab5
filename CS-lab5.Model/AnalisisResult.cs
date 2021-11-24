@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
+
 namespace CS_lab5.Model {
     [Serializable]
     public class AnalisisResult {
@@ -17,7 +18,7 @@ namespace CS_lab5.Model {
             analisisID = 0;
             temparature = 0;
             bloodTest = "";
-            other = new Dictionary<string, string>();
+            other = new Dictionary<string,string>();
         }
 
         public AnalisisResult(uint _analisisID, double _temparature, string _bloodTest, Dictionary<string,string> _other) {

@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 
 namespace CS_lab5.Model {
     [Serializable]
-    class Client : User {
+    public class Client : User {
         public uint assignedDoctor { get; set; }
         public PatientData data { get; set; }
 

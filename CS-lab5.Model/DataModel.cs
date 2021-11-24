@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 
 namespace CS_lab5.Model {
     [Serializable]
-    class DataMode {
+    public class DataModel {
         public IEnumerable<Client> Clients { get; set; }
         public IEnumerable<Doctor> Doctors { get; set; }
         public IEnumerable<PatientData> PatientData { get; set; }

@@ -7,7 +7,7 @@ using System.Runtime.Serialization;
 
 namespace CS_lab5.Model { 
     [Serializable]
-    class Doctor : User {
+    public class Doctor : User {
         public string specialisation { get; set; }
 
         public Doctor() : base() {
