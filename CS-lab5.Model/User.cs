@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
 
-namespace CS_lab4 {
+namespace CS_lab5.Model {
     [Serializable]
     public class User {
         public uint userID { get; set; }

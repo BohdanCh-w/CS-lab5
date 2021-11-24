@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
-namespace CS_lab4 {
+namespace CS_lab5.Model {
     [Serializable]
     public enum BLOOD_TYPE {
         Group_O,
