@@ -38,12 +38,12 @@ namespace CS_lab5.Model.Test {
                 new AnalisisResult(analisisID++, 37.2, "normal", null),
             };
             
-            DataSerializer.Serialize(@"G:\Bohdan-G\.univer\5semestr\CS\.lab\CS-lab5\CS-lab5.Model\model.dat", model);
+            DataSerializer.Serialize(@"G:\Bohdan-G\.univer\5semestr\CS\.lab\CS-lab5\CS-lab5.Model.Test\model.dat", model);
         }
 
         [TestMethod]
         public void DeserializeTest() {
-            var model = DataSerializer.Deserialize(@"G:\Bohdan-G\.univer\5semestr\CS\.lab\CS-lab5\CS-lab5.Model\model.dat");
+            var model = DataSerializer.Deserialize(@"G:\Bohdan-G\.univer\5semestr\CS\.lab\CS-lab5\CS-lab5.Model.Test\model.dat");
         }
     }
 }
