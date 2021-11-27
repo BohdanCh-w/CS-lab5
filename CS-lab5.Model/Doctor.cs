@@ -8,7 +8,15 @@ using System.Runtime.Serialization;
 namespace CS_lab5.Model { 
     [Serializable]
     public class Doctor : User {
-        public string specialisation { get; set; }
+        private string specialisation;
+
+        public string Specialisation {
+            get { return specialisation; }
+            set {
+                specialisation = value;
+                OnPropertyChanged(nameof(Specialisation));
+            }
+        }
 
         public Doctor() : base() {
             specialisation = "";

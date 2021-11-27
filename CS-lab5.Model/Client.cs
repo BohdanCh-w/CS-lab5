@@ -8,8 +8,24 @@ using System.Runtime.Serialization;
 namespace CS_lab5.Model {
     [Serializable]
     public class Client : User {
-        public uint assignedDoctor { get; set; }
-        public PatientData data { get; set; }
+        public uint assignedDoctor;
+        public PatientData data;
+
+        public uint AssignedDoctor { 
+            get { return assignedDoctor; }
+            set {
+                assignedDoctor = value;
+                OnPropertyChanged(nameof(AssignedDoctor));
+            }
+        }
+
+        public PatientData Data {
+            get { return data; }
+            set {
+                data = value;
+                OnPropertyChanged(nameof(Data));
+            }
+        }
 
         public Client() : base() {
             assignedDoctor = 0;
