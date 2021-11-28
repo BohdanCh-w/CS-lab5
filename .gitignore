@@ -7,3 +7,5 @@
 **/*.csproj
 /.vs
 **/App.config
+*.dat
+**/assets/
