@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="CS_lab5.UI.Views.DoctorsUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CS_lab5.UI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="450">
+    <Grid>
+        <DataGrid HorizontalAlignment="Left"
+                  VerticalAlignment="Top"
+                  Height="400" Width="450"
+                  Grid.Row="0" Grid.Column="0"
+                  ItemsSource="{Binding Path=Doctors}"
+                  SelectedItem="{Binding SelectedUser}"/>
+    </Grid>
+</UserControl>
