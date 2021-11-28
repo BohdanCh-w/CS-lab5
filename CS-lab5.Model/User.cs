@@ -8,10 +8,34 @@ using System.Runtime.Serialization;
 
 namespace CS_lab5.Model {
     [Serializable]
-    public class User {
-        public uint userID { get; set; }
-        public string firstName { get; set; }
-        public string lastName { get; set; }
+    public class User : BaseViewModel {
+        protected uint userID;
+        protected string firstName;
+        protected string lastName;
+
+        public uint UserID { 
+            get { return userID; }
+            set {
+                userID = value;
+                OnPropertyChanged(nameof(UserID));
+            }
+        }
+
+        public string FirstName {
+            get { return firstName; }
+            set {
+                firstName = value;
+                OnPropertyChanged(nameof(FirstName));
+            }
+        }
+
+        public string LastName {
+            get { return lastName; }
+            set {
+                lastName = value;
+                OnPropertyChanged(nameof(LastName));
+            }
+        }
 
         public User() {
             userID = 0;
