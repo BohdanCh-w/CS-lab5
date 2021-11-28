@@ -16,10 +16,34 @@ namespace CS_lab5.Model {
     }
 
     [Serializable]
-    public class PatientData {
-        public BLOOD_TYPE bloodType { get; set; }
-        public string location { get; set; }
-        public List<AnalisisResult> analisisHistory { get; set; }
+    public class PatientData : BaseViewModel {
+        private BLOOD_TYPE bloodType;
+        private string location;
+        private List<AnalisisResult> analisisHistory;
+
+        public BLOOD_TYPE BloodType { 
+            get { return bloodType; }
+            set {
+                bloodType = value;
+                OnPropertyChanged(nameof(BloodType));
+            }
+        }
+
+        public string Location { 
+            get { return location; }
+            set {
+                location = value;
+                OnPropertyChanged(nameof(Location));
+            }
+        }
+
+        public List<AnalisisResult> AnalisisHistory {
+            get { return analisisHistory; }
+            set {
+                analisisHistory = value;
+                OnPropertyChanged(nameof(AnalisisHistory));
+            }
+        }
 
         public PatientData() {
             bloodType = BLOOD_TYPE.UNKNOWN;

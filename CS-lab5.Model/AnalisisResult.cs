@@ -5,14 +5,44 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization;
 
-
 namespace CS_lab5.Model {
     [Serializable]
-    public class AnalisisResult {
-        public uint analisisID { get; set; }
-        public double temparature { get; set; }
-        public string bloodTest { get; set; }
-        public Dictionary<string,string> other { get; set; }
+    public class AnalisisResult : BaseViewModel {
+        private uint analisisID;
+        private double temparature;
+        private string bloodTest;
+        private Dictionary<string,string> other;
+
+        public uint AnalisisID { 
+            get { return analisisID; }
+            set {
+                analisisID = value;
+                OnPropertyChanged(nameof(AnalisisID));
+            }
+        }
+
+        public double Temparature {
+            get { return temparature; }
+            set {
+                temparature = value;
+                OnPropertyChanged(nameof(Temparature));
+            }
+        }
+
+        public string BloodTest {
+            get { return bloodTest; }
+            set {
+                bloodTest = value;
+                OnPropertyChanged(nameof(BloodTest));
+            }
+        }
+        public Dictionary<string, string> Other {
+            get { return other; }
+            set {
+                other = value;
+                OnPropertyChanged(nameof(Other));
+            }
+        }
 
         public AnalisisResult() {
             analisisID = 0;
