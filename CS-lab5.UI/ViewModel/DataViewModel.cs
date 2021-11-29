@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using CS_lab5.UI.Notifications;
 
 namespace CS_lab5.UI.ViewModel {
     class DataViewModel : BaseViewModel {
@@ -68,7 +69,7 @@ namespace CS_lab5.UI.ViewModel {
             }
         }
 
-        private string __appMode = "Clients";
+        private string __appMode = "Users";
         public string AppMode {
             get { return __appMode; }
             set {
@@ -87,16 +88,23 @@ namespace CS_lab5.UI.ViewModel {
 
         public ICommand DeleteSelectedUser { get; set; }
         public void DeleteSelectedUserCmd(object args) {
-            if(SelectedUser.GetType() == typeof(Client)) {
-                Clients.Remove((Client)SelectedUser);
-            } else if(SelectedUser.GetType() == typeof(Doctor)) {
-                Doctors.Remove((Doctor)SelectedUser);
-            } else {
-                throw new ArgumentException("Wrong type of selected user");
+            try {
+                throw new Exception();
+                if(SelectedUser.GetType() == typeof(Client)) {
+                    Clients.Remove((Client)SelectedUser);
+                } else if(SelectedUser.GetType() == typeof(Doctor)) {
+                    Doctors.Remove((Doctor)SelectedUser);
+                } else {
+                    throw new ArgumentException("Wrong type of selected user");
+                }
+                SelectedUser = null;
+                __users = getAllUsers();
+                OnPropertyChanged(nameof(Users));
+            } catch (Exception ex) {
+                NotificationWindow.Notify(new Notification("Error", ex.Message, NotificationType.ERROR));
+                return;
             }
-            SelectedUser = null;
-            __users = getAllUsers();
-            OnPropertyChanged(nameof(Users));
+            NotificationWindow.Notify(new Notification("Info", "User deleted successfuly", NotificationType.INFO));
         }
         public bool CanDeleteSelectedUser(object args) {
             return SelectedUser != null;

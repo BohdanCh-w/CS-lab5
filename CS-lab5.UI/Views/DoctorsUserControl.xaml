@@ -10,8 +10,16 @@
         <DataGrid HorizontalAlignment="Left"
                   VerticalAlignment="Top"
                   Height="400" Width="450"
+                  AutoGenerateColumns="False"
                   Grid.Row="0" Grid.Column="0"
-                  ItemsSource="{Binding Path=Doctors}"
-                  SelectedItem="{Binding SelectedUser}"/>
+                  ItemsSource="{Binding Path=Doctors}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding Path=UserID, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="First Name" Binding="{Binding Path=FirstName, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding Path=LastName, Mode=TwoWay}"/>
+                <DataGridTextColumn Header="Specialisation" Binding="{Binding Path=Specialisation, Mode=TwoWay}"/>                
+            </DataGrid.Columns>
+            
+        </DataGrid>
     </Grid>
 </UserControl>

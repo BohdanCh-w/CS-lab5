@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CS_lab5.UI.Notifications"
-        xmlns:Converters="clr-namespace:CS_lab5.UI.Notifications"
+        xmlns:Converters="clr-namespace:CS_lab5.UI.Converters"
         mc:Ignorable="d"
         Title="{Binding Path=Title}" Height="150" Width="300">
     
@@ -25,8 +25,8 @@
             </Image>
         </StackPanel>
         <StackPanel Grid.Column="1" 
-                    Orientation="Horizontal" HorizontalAlignment="Center">
-            <TextBlock Text="{Binding Path=Message}"> </TextBlock>
+                    Orientation="Horizontal" HorizontalAlignment="Left">
+            <TextBlock Width="190" Text="{Binding Path=Message}" TextWrapping="Wrap"/>
         </StackPanel>
         
     </Grid>
